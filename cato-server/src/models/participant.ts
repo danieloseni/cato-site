@@ -183,7 +183,7 @@ ParticipantSchema.statics.generateReference = async function(){
         let referenceGenerated = false;
         let reference:string = ""
         while(!referenceGenerated){
-            reference = (Date.now() + 1).toString()
+            reference = "REF-" + (Date.now() + 1).toString()
             const references = await this.find({transactionReference: reference});
             if(references.length === 0){
                 referenceGenerated = true
