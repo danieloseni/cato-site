@@ -203,7 +203,8 @@ export default class Register extends Component<Props, State> {
         const { headings, progress } = this.state
         return (
             <Fragment>
-                <div className="container primary-bg full-height registration-box  white-text">
+                <div className="container flex justify-center   primary-bg full-height registration-box  white-text">
+                    <div className="w-35">
                     <header>
                         <div className="f8">
                             {headings[progress].title}
@@ -230,6 +231,7 @@ export default class Register extends Component<Props, State> {
                             {/* </Link> */}
                         </div>
                     </footer>
+                    </div>
                 </div>
 
             </Fragment>

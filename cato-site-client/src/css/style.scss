@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import './variables';
 @import './general';
 
@@ -11,7 +11,7 @@ body{
 
 ul{
     list-style: none;
-    padding: 0; 
+    padding: 0;
     margin: 0;
 }
 
@@ -21,29 +21,33 @@ ul{
 
 nav{
     width: 100%;
-    background: #2d2f48;
+    // background: #2d2f48;
     display: flex;
     justify-content: space-between;
     padding: 0 60px;
     position: fixed;
+    z-index: 9999;
+    transition: .5s ease-in-out;
 }
 
 .logo{
     width: 300px;
     height: 100px;
     margin-left: -70px;
+    transition: .5s ease-in-out;
 }
 
 .logo img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: .5s ease-in-out;
 }
 
 .navs{
     display: flex;
     align-items: center;
-   
+
 }
 
 .nav-links{
@@ -61,12 +65,20 @@ nav{
     margin-right: 15px;
 }
 
+.navbar-mini{
+    height: 50px;
+    background: $primary-bg;
+    .logo{
+        width: 150px;
+        height: 50px;
+    }
+}
+
 .cta{
-    width: 157px;
+    width: 220px;
     height: 52px;
-    border-radius: 12px;
-    background: white;
-    color: #919a31;
+    background: $secondary-bg2;
+    color: $primary-bg;
     font-size: 16x;
     text-transform: uppercase;
     display: flex;
@@ -78,9 +90,42 @@ nav{
 }
 
 .hero{
-    background: #2d2f48;
     height: 100vh;
-    max-height: 768px;
+    min-height: 768px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.image-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: 10;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+  
+    
+}
+
+.image-overlay::before{
+    display: block;
+    content: "";
+    background: #000000db;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
 
 .dual-box{
@@ -102,8 +147,8 @@ nav{
     margin-right: 30px;
 }
 
-.hero-content{
-    /* padding: 0 80px; */
+.hero-info{
+    z-index: 12;
 }
 
 .hero-title{
@@ -157,17 +202,22 @@ nav{
     height: 100%;
 }
 
+.current-event{
+    background: $secondary-bg2;
+    padding: 40px 0px;
+}
+
 .current-event .section{
     flex: 1  0 50%;
     overflow: hidden;
-    height: 100vh;
-    max-height: 768px;
+    // height: 100vh;
+    // max-height: 768px;
 
 }
 
 .event-box{
     width: 100%;
-    background: #2d2f48;
+    // background: #2d2f48;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -187,15 +237,17 @@ nav{
 }
 
 .event-title{
-    color: white;
-    font-size: 40px;
+    color: $secondary-bg3;
+    font-size: 45px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Raleway', 'sans-serif';
+    display: flex;
+    flex-direction:column;
 }
 
 .event-description{
-    color: white;
+    color: $primary-bg;
     font-size: 20px;
     margin-bottom: 30px;
     font-family: 'Open Sans', 'sans-serif';
@@ -203,7 +255,7 @@ nav{
 
 .event-age{
     font-size: 20px;
-    color: white;
+    color: $primary-bg;
     font-weight:600;
     margin-bottom: 30px;
     font-family: 'Open Sans', 'sans-serif';
@@ -228,6 +280,7 @@ nav{
     align-items: center;
     margin-bottom: 50px;
     font-family: 'Open Sans', 'sans-serif';
+    flex-wrap: wrap;
 }
 
 .event-price{
@@ -244,8 +297,8 @@ nav{
 .event-cta{
     width: 348px;
     height:73px;
-    background: white; 
-    color: #919a31;
+    background: $primary-bg;
+    color: $secondary-bg2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,8 +306,13 @@ nav{
     cursor: pointer;
     font-size: 20px;
     text-transform: uppercase;
-    font-family: 'Open Sans', 'sans-serif'
+    font-family: 'Open Sans', 'sans-serif';
+    outline: none;
 
+}
+
+.event-cta:active{
+    background: $primary-bg
 }
 
 .upcoming-events{
@@ -311,7 +369,7 @@ nav{
     color: white;
     font-size: 16px;
     margin-bottom: 30px;
-    max-width: 100%; 
+    max-width: 100%;
     font-family: 'Open Sans', 'sans-serif'
 
 }
@@ -328,7 +386,7 @@ nav{
 }
 
 .sponsors{
-    background: hsla(217, 58, 31, 4);
+    background: $secondary-bg;
     padding: 40px 20px;
 }
 
@@ -412,16 +470,16 @@ footer .contact .phone{
     margin-bottom: 30px;
     .title{
         font-size: 20px;
-        color: white;
+        color: $primary-bg;
         margin-bottom: 10px;
         text-transform: uppercase;
         width: fit-content;
         padding-bottom: 10px;
-        border-bottom: 1px solid #fff7d6
+        border-bottom: 1px solid $primary-bg
     }
 
     .info-body{
-        color: white;
+        color: $primary-bg;
     }
 }
 
@@ -431,7 +489,7 @@ footer .contact .phone{
 
     li{
         display: flex;
-        gap: 10px; 
+        gap: 10px;
         margin-bottom: 10px;
         font-size: 17px;
         span{
@@ -450,28 +508,16 @@ footer .contact .phone{
     }
 }
 
-.mt-2{
-    margin-top: 10px;
-}
-.mt-3{
-    margin-top: 15px;
-}
-.mt-4{
-    margin-top: 20px;
-}
-.mb-2{
-    margin-bottom: 10px;
-}
-
 .file-download-indicator{
     display: flex;
-    width: 100%;
+    max-width: 100%;
+    width: fit-content;
     box-sizing: border-box;
     gap: 10px;
     height: 60px;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #fff7d6;
+    border: 1px solid $primary-bg;
 
     *{
         box-sizing: border-box;
@@ -479,11 +525,11 @@ footer .contact .phone{
 
     .icon, .download-icon{
         height: 100%;
-        background: #fff7d6;
+        background: $primary-bg;
         padding: 10px 15px;;
         font-size: 20px;
         display:flex;
-        color: #2d2f48;
+        color: $secondary-bg2;
         align-items: center;
         justify-content: center;
         flex: 0 0 auto;
@@ -501,6 +547,19 @@ footer .contact .phone{
         padding: 10px;
     }
 }
+.mt-2{
+    margin-top: 10px;
+}
+.mt-3{
+    margin-top: 15px;
+}
+.mt-4{
+    margin-top: 20px;
+}
+.mb-2{
+    margin-bottom: 10px;
+}
+
 
 
 

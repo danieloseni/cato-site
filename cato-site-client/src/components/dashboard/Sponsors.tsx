@@ -14,7 +14,7 @@ const Sponsors = () => {
     return (
         <section className="sponsors">
             <div className="title">
-                Catotournament is Proudly Sponsored by
+                Our Partners
             </div>
 
             <div className="sponsor-grid">

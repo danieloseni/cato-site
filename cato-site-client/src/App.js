@@ -15,7 +15,7 @@ import Register from 'components/register/Register';
 function App() {
   return (
     <Router>
-            {/* <Header /> */}
+            <Header />
                 <Switch>
                     <Route path = "/" exact element = {<Dashboard />} />
                     <Route path = "/register/*" element = {<Register />} />

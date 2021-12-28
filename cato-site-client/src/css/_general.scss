@@ -4,6 +4,9 @@
 .secondary-bg{
     background: $secondary-bg
 }
+.secondary-text-2{
+    color: $secondary-bg2;
+}
 .container{
     padding: 20px 5%;
     width: 100%;
@@ -11,6 +14,10 @@
 
 .full-height{
     min-height: 100vh;
+}
+
+.full-width{
+    width: 100%;
 }
 
 .f4{
@@ -46,11 +53,11 @@
 
     .form-element{
         display: flex;
-
+        flex-wrap: wrap;
         gap: 30px;
 
         .fe-stack{
-            flex: 1 1 auto;
+            flex: 1 1 300px;
             display: flex;
             flex-direction: column;
 
@@ -61,7 +68,7 @@
         }
 
         [type=text]{
-            height: 60px;
+            height: 45px;
             border: none;
             outline: none;
             font-size: 20px;
@@ -105,4 +112,109 @@
 
 .br-2{
     border-radius: 10px;
+}
+
+@for $width from 1 through 100{
+    .w-#{$width}{
+        width: ($width) * 1%;
+    }
+
+    .f#{$width}{
+        font-size: ($width) * 1px; 
+    }
+
+    @for $size from 1 through 100{
+        .f#{$width}-m#{$size}{
+            font-size: $width * 1px;
+        }
+
+        @media (max-width: 480px){
+            .f#{$width}-m#{$size}{
+                font-size: $size * 1px;
+            }
+        }
+    }
+
+    .mb-#{$width}{
+        margin-bottom: ($width) * 5px;
+    }
+
+    .mt-#{$width}{
+        margin-top: ($width) * 5px;
+    }
+
+    .pd-#{$width}{
+        padding: ($width) * 5px
+    }
+
+    .pl-#{$width}{
+        padding-left: ($width) * 5px
+    }
+
+    .pr-#{$width}{
+        padding-right: ($width) * 5px
+    }
+
+    .pt-#{$width}{
+        padding-top: ($width) * 5px
+    }
+
+    .pb-#{$width}{
+        padding-bottom: ($width) * 5px
+    }
+
+    .mg-#{$width}{
+        margin: ($width) * 5px
+    }
+
+    .mr-#{$width}{
+        margin-right: ($width) * 5px
+    }
+
+    .ml-#{$width}{
+        margin-left: ($width) * 5px
+    }
+    .g-#{$width}{
+        gap: ($width) * 5px;
+    }
+}
+
+
+
+
+.flex{
+    display: flex;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column
+}
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+.text-align-center{
+    text-align: center;
+}
+
+.fit-content{
+    width: fit-content;
+}
+
+.raleway{
+    font-family: 'Raleway', 'sans-serif'
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.sentence-case{
+    text-transform:capitalize !important;
 }
